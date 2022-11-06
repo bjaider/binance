@@ -1,0 +1,28 @@
+###Create a new user
+POST http://localhost:8080/api/user/
+Content-Type: application/json
+
+{
+    "APIKey":"I5eYSH1voCZ5dzTYuXfYtC9WfEBMiIhoISETdhLjsOXjetVcrLaAzLwLOLY9Sy5F",
+    "SecretKey":"qeIgzvoNYL3Gt0TNHgKOzhzMkdLsrCiw2AlP0ZCbJk8UZCeoHeWYmPvTqKoqPJaM"
+}
+
+###Get user account information
+GET http://localhost:8080/api/user/userInfo/:id
+
+###Get top 10 most losing currencies
+GET http://localhost:8080/api/currencies/loseValue
+
+
+###Create a LIMIT order
+POST http://localhost:8080/api/orders/sendOrder/:id
+Content-Type: application/json
+
+{   
+    "symbol":"BNBUSDT",
+    "side":"BUY",
+    "type":"LIMIT",
+    "price":"100",
+    "quantity":1,
+    "timeInForce":"GTC"
+}
