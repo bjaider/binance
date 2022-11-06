@@ -1,6 +1,6 @@
-const {Spot} = require('@binance/connector')
-const {User} = require('../models')
-/* const {getCurrencies} = require('../helpers/getCurrencies') */
+import {Spot} from '@binance/connector'
+import User from '../models/user.js'
+/* const {getCurrencies} from '../helpers/getCurrencies') */
 
 const ordersPost = async (req, res) => {
   /* const ticketClient = new Spot() */
@@ -26,6 +26,4 @@ const ordersPost = async (req, res) => {
   }
 }
 
-module.exports = {
-  ordersPost,
-}
+export {ordersPost}

@@ -1,15 +1,10 @@
-const {Router} = require('express')
-const {check} = require('express-validator')
-const {userGet, usersPost} = require('../controllers/users')
-const {checkFields} = require('../middlewares/check-fields')
+import {Router} from 'express'
+import {check} from 'express-validator'
+import {userGet, userGetByParams, usersPost} from '../controllers/users.js'
+import {checkFields} from '../middlewares/check-fields.js'
 
 const router = Router()
 
-router.get(
-  '/userInfo/:uid',
-  [check('uid', 'Invalid ID').isMongoId(), checkFields],
-  userGet,
-)
 router.post(
   '/',
   [
@@ -19,4 +14,19 @@ router.post(
   ],
   usersPost,
 )
-module.exports = router
+router.get(
+  '/',
+  [
+    check('APIKey', 'APIKey must be provided').not().isEmpty(),
+    check('SecretKey', 'SecretKey must be provided').not().isEmpty(),
+    checkFields,
+  ],
+  userGetByParams,
+)
+router.get(
+  '/userInfo/:uid',
+  [check('uid', 'Invalid ID').isMongoId(), checkFields],
+  userGet,
+)
+
+export default router

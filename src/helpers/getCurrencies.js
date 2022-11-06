@@ -15,6 +15,4 @@ const getCurrencies = (response, currenciesNumber) => {
   return currenciesNumber === 1 ? data[0] : data
 }
 
-module.exports = {
-  getCurrencies,
-}
+export {getCurrencies}

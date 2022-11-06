@@ -7,6 +7,9 @@ Content-Type: application/json
     "SecretKey":"qeIgzvoNYL3Gt0TNHgKOzhzMkdLsrCiw2AlP0ZCbJk8UZCeoHeWYmPvTqKoqPJaM"
 }
 
+###Get uid
+GET http://localhost:8080/api/user?APIKey=I5eYSH1voCZ5dzTYuXfYtC9WfEBMiIhoISETdhLjsOXjetVcrLaAzLwLOLY9Sy5F&SecretKey=qeIgzvoNYL3Gt0TNHgKOzhzMkdLsrCiw2AlP0ZCbJk8UZCeoHeWYmPvTqKoqPJaM
+
 ###Get user account information
 GET http://localhost:8080/api/user/userInfo/:id
 

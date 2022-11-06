@@ -1,5 +1,5 @@
-const {Spot} = require('@binance/connector')
-const {getCurrencies} = require('../helpers/getCurrencies')
+import {Spot} from '@binance/connector'
+import {getCurrencies} from '../helpers/getCurrencies.js'
 const currenciesGet = async (req, res) => {
   const client = new Spot()
   try {
@@ -11,6 +11,4 @@ const currenciesGet = async (req, res) => {
   }
 }
 
-module.exports = {
-  currenciesGet,
-}
+export {currenciesGet}

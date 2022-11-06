@@ -1,7 +1,7 @@
-const {Router} = require('express')
-const {check} = require('express-validator')
-const {ordersPost} = require('../controllers/orders')
-const {checkFields} = require('../middlewares/check-fields')
+import {Router} from 'express'
+import {check} from 'express-validator'
+import {ordersPost} from '../controllers/orders.js'
+import {checkFields} from '../middlewares/check-fields.js'
 
 const router = Router()
 
@@ -11,4 +11,4 @@ router.post(
   ordersPost,
 )
 
-module.exports = router
+export default router

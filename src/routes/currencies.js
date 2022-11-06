@@ -1,7 +1,7 @@
-const {Router} = require('express')
-const {currenciesGet} = require('../controllers/currencies')
+import {Router} from 'express'
+import {currenciesGet} from '../controllers/currencies.js'
 
 const router = Router()
 
 router.get('/loseValue', currenciesGet)
-module.exports = router
+export default router

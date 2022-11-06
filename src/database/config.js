@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
 const dbConnection = async () => {
   try {
@@ -8,14 +8,10 @@ const dbConnection = async () => {
       useCreateIndex: true,
       useFindAndModify: false,
     })
-
-    console.log('DB online')
   } catch (error) {
     console.log(error)
     throw new Error('DB error')
   }
 }
 
-module.exports = {
-  dbConnection,
-}
+export {dbConnection}

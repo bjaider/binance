@@ -1,5 +1,5 @@
-const {Schema, model} = require('mongoose')
-
+import pkg from 'mongoose'
+const {Schema, model} = pkg
 const UserSchema = Schema({
   APIKey: {
     type: String,
@@ -9,12 +9,17 @@ const UserSchema = Schema({
     type: String,
     required: [true, 'SecretKey must be provided'],
   },
+  email: {
+    type: String,
+    required: false,
+    default: '',
+  },
 })
 
 UserSchema.methods.toJSON = function () {
-  const {__v, _id, APIKey, SecretKey, ...user} = this.toObject()
+  const {__v, _id, APIKey, SecretKey, email, ...user} = this.toObject()
   user.uid = _id
   return user
 }
 
-module.exports = model('User', UserSchema)
+export default model('User', UserSchema)
